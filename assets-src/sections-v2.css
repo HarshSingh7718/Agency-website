@@ -1,0 +1,212 @@
+/* =====================================================================
+   GAP3 — Service-page v2 sections
+   proof_strip · recent_work · review_wall · pricing_plans · protect_band
+   · compare_table · svc_hero assure line
+   Loaded after theme.css / responsive.css (see inc/enqueue.php).
+   ===================================================================== */
+
+/* Section-settings "Green tint" must win even on templates whose base class is
+   .section.alt (e.g. the stats counter) — .section.alt outranks .tint alone. */
+.section.alt.tint { background: var(--c-band); }
+
+/* ---------- hero assurance line ---------- */
+.svchero .assure { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 24px; }
+.svchero .assure span { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 600; color: var(--c-secondary); }
+.svchero .assure iconify-icon { color: var(--c-green-link); font-size: 17px; }
+
+/* ---------- proof strip ---------- */
+.proof-strip { background: var(--c-green-deep); position: relative; overflow: hidden; }
+.proof-strip .ghost { position: absolute; right: -10px; bottom: -34px; font-family: var(--font-accent); font-style: italic; font-size: 130px; line-height: 1; color: rgba(255,255,255,0.045); white-space: nowrap; pointer-events: none; }
+.proof-strip .in { max-width: var(--container); margin: 0 auto; padding: 40px var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; position: relative; z-index: 1; }
+.proof-stats { display: flex; flex-wrap: wrap; }
+.proof-stat { display: flex; flex-direction: column; gap: 7px; padding: 4px 38px; border-left: 1px solid var(--c-line-dark); }
+.proof-stat:first-child { border-left: none; padding-left: 0; }
+.proof-stat .num { font-family: var(--font-accent); font-style: italic; font-size: 42px; line-height: 1; color: var(--c-green-on-dark); }
+.proof-stat .label { font-size: 15px; color: var(--c-on-dark-2); max-width: 190px; line-height: 1.45; }
+.proof-badges { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.proof-badges .b-label { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-on-dark-muted); }
+.proof-badges .b-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.proof-badge { display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(242,246,239,0.18); border-radius: var(--r-pill); padding: 10px 18px; font-size: 15px; font-weight: 600; color: var(--c-on-dark); transition: border-color 0.2s ease; }
+a.proof-badge:hover { border-color: var(--c-green-on-dark); color: var(--c-on-dark); }
+.proof-badge iconify-icon { font-size: 17px; color: var(--c-green-on-dark); }
+
+/* ---------- recent work: alternating image / text rows ---------- */
+.rwork-list { display: flex; flex-direction: column; gap: 28px; }
+.rwork-item { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; background: var(--c-white); border: 1px solid var(--c-line); border-radius: 20px; padding: 40px 44px; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.rwork-item:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(15,23,18,0.08); }
+.rwork-item:nth-child(even) .rwork-media { order: 2; }
+.rwork-media { min-width: 0; }
+.rwork-media img.rwork-img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; border: 1px solid var(--c-line); }
+.rwork-frame { aspect-ratio: 4 / 3; border-radius: 14px; border: 1px solid var(--c-mint-border); background: var(--c-band); display: flex; flex-direction: column; overflow: hidden; }
+.rwork-frame .rf-bar { display: flex; gap: 6px; padding: 12px 16px; background: var(--c-white); border-bottom: 1px solid var(--c-mint-border); }
+.rwork-frame .rf-bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--c-mint); }
+.rwork-frame .rf-body { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--c-green-deep); }
+.rwork-frame .rf-body iconify-icon { font-size: 40px; opacity: 0.5; }
+.rwork-frame .rf-t { font-family: var(--font-accent); font-style: italic; font-size: 22px; }
+.rwork-body { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.rwork-top { display: flex; justify-content: space-between; align-items: center; }
+.rwork-tag { border: 1px solid var(--c-mint-border); background: var(--c-band); color: var(--c-green-deep); border-radius: var(--r-pill); padding: 6px 14px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.rwork-num { font-family: var(--font-accent); font-style: italic; font-size: 34px; line-height: 1; color: var(--c-mint-border); }
+.rwork-t { font-size: 24px; font-weight: 700; letter-spacing: -0.01em; color: var(--c-ink); }
+.rwork-row .k { display: block; font-size: 13px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-green-link); margin-bottom: 4px; }
+.rwork-row .v { font-size: 16px; line-height: 1.6; color: var(--c-secondary); }
+.rwork-quote { border-left: 3px solid var(--c-green); padding-left: 16px; margin: 4px 0; }
+.rwork-quote p { font-family: var(--font-accent); font-style: italic; font-size: 19px; line-height: 1.5; color: var(--c-ink-soft); }
+.rwork-quote cite { display: inline-flex; align-items: center; gap: 7px; font-style: normal; font-size: 14px; color: var(--c-muted); margin-top: 8px; }
+.rwork-quote cite iconify-icon { color: var(--c-green-link); }
+.rwork-live { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; color: var(--c-muted); }
+.rwork-foot { padding-top: 18px; border-top: 1px dashed var(--c-line); display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.rwork-link { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 600; color: var(--c-green-link); }
+.rwork-link:hover { gap: 12px; color: var(--c-green-deep); }
+
+/* ---------- review wall (google reviews) ---------- */
+.rev-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; margin-bottom: 52px; }
+.rev-head .sec-head { margin-bottom: 0; }
+.rev-lockup { display: flex; align-items: center; gap: 20px; background: var(--c-white); border: 1px solid var(--c-line); border-radius: 18px; padding: 22px 28px; }
+.rev-lockup .g-ico { width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--c-line); display: grid; place-items: center; font-size: 24px; flex: none; }
+.rev-lockup .num { font-family: var(--font-accent); font-style: italic; font-size: 52px; line-height: 1; color: var(--c-ink); }
+.rev-lockup .col { display: flex; flex-direction: column; gap: 5px; }
+.rev-lockup .stars { font-size: 16px; }
+.rev-lockup .sub { font-size: 14px; color: var(--c-muted); }
+.rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.rev-card { background: var(--c-white); border: 1px solid var(--c-line); border-radius: var(--r-card); padding: 30px 28px; display: flex; flex-direction: column; gap: 16px; margin: 0; }
+.rev-card .stars { font-size: 15px; }
+.rev-card .text { font-size: 17px; line-height: 1.65; color: var(--c-body); }
+.rev-card .author { display: flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 4px; }
+.rev-card .mono { width: 44px; height: 44px; border-radius: 50%; background: var(--c-icon-bg); color: var(--c-green-deep); display: grid; place-items: center; font-size: 15px; font-weight: 700; flex: none; }
+.rev-card .name { font-size: 17px; font-weight: 600; color: var(--c-ink-soft); }
+.rev-card .meta { font-size: 14px; color: var(--c-muted); display: inline-flex; align-items: center; gap: 6px; }
+.rev-cta { display: flex; justify-content: center; margin-top: 44px; }
+
+/* ---------- pricing plans (three ways to hire) ---------- */
+.plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: stretch; margin-top: 30px; }
+.plan-card { position: relative; background: var(--c-white); border: 1px solid var(--c-line); border-radius: 20px; padding: 42px 36px 36px; display: flex; flex-direction: column; gap: 22px; }
+.plan-card.featured { background: var(--c-green-deep); border-color: var(--c-green-deep); }
+.plan-flag { position: absolute; top: -16px; left: 36px; background: var(--c-green); color: #fff; border-radius: var(--r-pill); padding: 7px 18px; font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; box-shadow: 0 6px 16px rgba(15,23,18,0.18); white-space: nowrap; }
+.plan-ico { width: 52px; height: 52px; border-radius: 14px; background: var(--c-icon-bg); color: var(--c-green-deep); display: grid; place-items: center; font-size: 22px; }
+.plan-card.featured .plan-ico { background: rgba(126,231,167,0.16); color: var(--c-green-on-dark); }
+.plan-name { font-size: 26px; font-weight: 700; letter-spacing: -0.01em; color: var(--c-ink); }
+.plan-card.featured .plan-name { color: var(--c-on-dark); }
+.plan-price { font-family: var(--font-accent); font-style: italic; font-size: 30px; color: var(--c-green-link); line-height: 1.2; }
+.plan-card.featured .plan-price { color: var(--c-green-on-dark); }
+.plan-price .ps { display: block; font-family: var(--font-body); font-style: normal; font-size: 14px; color: var(--c-muted); margin-top: 4px; letter-spacing: 0; }
+.plan-card.featured .plan-price .ps { color: var(--c-on-dark-muted); }
+.plan-row { border-top: 1px dashed var(--c-line); padding-top: 18px; }
+.plan-card.featured .plan-row { border-top-color: var(--c-line-dark); }
+.plan-row .k { display: block; font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-muted); margin-bottom: 5px; }
+.plan-card.featured .plan-row .k { color: var(--c-on-dark-muted); }
+.plan-row .v { font-size: 16px; line-height: 1.6; color: var(--c-secondary); }
+.plan-card.featured .plan-row .v { color: var(--c-on-dark-3); }
+.plan-card .btn { justify-content: center; margin-top: auto; width: 100%; padding-block: 18px; }
+.plan-card .plan-row:last-of-type { padding-bottom: 26px; }
+.plans-note { text-align: center; margin-top: 44px; font-size: 19px; color: var(--c-secondary); }
+
+/* ---------- protect band (how we protect your project) ---------- */
+.protect-band { background: var(--c-band); border: 1px solid var(--c-ctaband-border); border-radius: 24px; padding: 60px 56px; display: grid; grid-template-columns: 0.9fr 1.3fr; gap: 64px; align-items: start; }
+.protect-intro { display: flex; flex-direction: column; gap: 18px; position: sticky; top: 120px; }
+.protect-intro .heading { font-size: 44px; }
+.protect-list { display: flex; flex-direction: column; }
+.protect-item { display: flex; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--c-mint-border); align-items: flex-start; }
+.protect-item:first-child { padding-top: 4px; }
+.protect-item:last-child { border-bottom: none; padding-bottom: 4px; }
+.protect-item .p-ico { width: 48px; height: 48px; min-width: 48px; border-radius: 13px; background: var(--c-white); color: var(--c-green-deep); display: grid; place-items: center; font-size: 20px; border: 1px solid var(--c-mint-border); }
+.protect-item p { font-size: 16.5px; line-height: 1.65; color: var(--c-body); padding-top: 2px; }
+.protect-item p b { color: var(--c-ink); font-weight: 700; }
+
+/* ---------- compare table (freelancer vs agency vs GAP3) ---------- */
+.compare-wrap { border: 1px solid var(--c-line); border-radius: 20px; background: var(--c-white); overflow-x: auto; }
+table.compare { width: 100%; border-collapse: collapse; min-width: 880px; }
+.compare th, .compare td { padding: 20px 26px; text-align: left; font-size: 16px; line-height: 1.55; border-top: 1px solid var(--c-line); vertical-align: top; }
+.compare thead th { border-top: none; padding-top: 26px; padding-bottom: 22px; font-size: 17px; font-weight: 700; color: var(--c-ink); }
+.compare thead th:first-child { font-size: 13px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-muted); vertical-align: middle; }
+.compare tbody th[scope="row"] { font-size: 15px; font-weight: 700; color: var(--c-ink); width: 190px; }
+.compare td { color: var(--c-secondary); }
+.compare .gap3 { background: var(--c-band); border-left: 1px solid var(--c-mint-border); }
+.compare thead th.gap3 { background: var(--c-green-deep); color: var(--c-on-dark); border-radius: 14px 14px 0 0; }
+.compare thead th.gap3 .us { display: inline-block; margin-left: 10px; background: var(--c-green); color: #fff; border-radius: var(--r-pill); padding: 3px 12px; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; vertical-align: 2px; }
+.compare td.gap3 { color: var(--c-green-deep); font-weight: 600; border-top-color: var(--c-mint-border); }
+.compare td.gap3 iconify-icon { color: var(--c-green-link); font-size: 17px; margin-right: 8px; vertical-align: -3px; }
+.compare-note { text-align: center; max-width: 860px; margin: 44px auto 0; font-size: 18px; line-height: 1.7; color: var(--c-secondary); }
+
+/* ---------- niche icon colors (industries hub list) ----------
+   Add "niche-icons" in a services_list section's Extra CSS Classes and every
+   row's icon takes a distinct, recognisable hue so visitors can scan the list
+   by industry at a glance. Rows cycle through 14 accessible colors. */
+.niche-icons .svc-row .ico-glyph { transition: transform 0.2s ease; }
+.niche-icons .svc-row:hover .ico-glyph { transform: scale(1.12); }
+.niche-icons .svc-row:nth-child(14n+1)  .ico-glyph { color: #B45309; } /* education · amber */
+.niche-icons .svc-row:nth-child(14n+2)  .ico-glyph { color: #7C3AED; } /* photography · violet */
+.niche-icons .svc-row:nth-child(14n+3)  .ico-glyph { color: #DB2777; } /* fashion · pink */
+.niche-icons .svc-row:nth-child(14n+4)  .ico-glyph { color: #E11D48; } /* beauty · rose */
+.niche-icons .svc-row:nth-child(14n+5)  .ico-glyph { color: #059669; } /* fitness · emerald */
+.niche-icons .svc-row:nth-child(14n+6)  .ico-glyph { color: #EA580C; } /* food · orange */
+.niche-icons .svc-row:nth-child(14n+7)  .ico-glyph { color: #C026D3; } /* weddings · fuchsia */
+.niche-icons .svc-row:nth-child(14n+8)  .ico-glyph { color: #92400E; } /* pets · brown */
+.niche-icons .svc-row:nth-child(14n+9)  .ico-glyph { color: #0284C7; } /* sports · sky */
+.niche-icons .svc-row:nth-child(14n+10) .ico-glyph { color: #4F46E5; } /* agencies · indigo */
+.niche-icons .svc-row:nth-child(14n+11) .ico-glyph { color: #334155; } /* corporate · slate */
+.niche-icons .svc-row:nth-child(14n+12) .ico-glyph { color: #CA8A04; } /* trades · gold */
+.niche-icons .svc-row:nth-child(14n+13) .ico-glyph { color: #0D9488; } /* fintech · teal */
+.niche-icons .svc-row:nth-child(14n+14) .ico-glyph { color: #16A34A; } /* d2c · green */
+
+/* ---------- partner icon colors (partners hub list) ----------
+   Add "partner-icons" in the services_list section's Extra CSS Classes. Brand
+   SVG rows (WordPress, Shopify, Webflow, Instagram) keep their own brand fills;
+   these colors light up the lucide glyph rows so nothing sits plain black. */
+.partner-icons .svc-row .ico-glyph { transition: transform 0.2s ease; }
+.partner-icons .svc-row:hover .ico-glyph { transform: scale(1.12); }
+.partner-icons .svc-row:nth-child(8n+1) .ico-glyph { color: #2271B1; } /* wordpress · blue */
+.partner-icons .svc-row:nth-child(8n+2) .ico-glyph { color: #7F54B3; } /* woocommerce · purple */
+.partner-icons .svc-row:nth-child(8n+3) .ico-glyph { color: #0D9488; } /* seo · teal */
+.partner-icons .svc-row:nth-child(8n+4) .ico-glyph { color: #95BF47; } /* shopify · green */
+.partner-icons .svc-row:nth-child(8n+5) .ico-glyph { color: #4353FF; } /* webflow · blue */
+.partner-icons .svc-row:nth-child(8n+6) .ico-glyph { color: #EA580C; } /* landing pages · orange */
+.partner-icons .svc-row:nth-child(8n+7) .ico-glyph { color: #4F46E5; } /* maintenance · indigo */
+.partner-icons .svc-row:nth-child(8n+8) .ico-glyph { color: #E1306C; } /* social · pink */
+
+/* ---------- responsive ---------- */
+@media (max-width: 1280px) {
+  .proof-stat { padding: 4px 26px; }
+  .proof-stat .num { font-size: 36px; }
+}
+@media (max-width: 1024px) {
+  .rev-grid, .plans-grid { grid-template-columns: 1fr; max-width: 620px; margin-inline: auto; }
+  .plans-grid { gap: 34px; }
+  .rwork-item { grid-template-columns: 1fr; gap: 28px; padding: 28px; }
+  .rwork-item:nth-child(even) .rwork-media { order: 0; }
+  .protect-band { grid-template-columns: 1fr; gap: 40px; padding: 44px 36px; }
+  .protect-intro { position: static; }
+  .rev-head { align-items: flex-start; flex-direction: column; }
+}
+/* Comparison table below 900px: no horizontal scroll anywhere — each criterion
+   becomes a stacked block card (label header, then the three options, GAP3
+   highlighted last), matching the card language of the rest of the site. */
+@media (max-width: 900px) {
+  .compare-wrap { overflow-x: visible; border: none; background: transparent; border-radius: 0; }
+  table.compare { min-width: 0; }
+  table.compare, .compare tbody, .compare tbody tr, .compare tbody th, .compare td { display: block; width: 100%; }
+  .compare thead { display: none; }
+  .compare tbody tr { background: var(--c-white); border: 1px solid var(--c-line); border-radius: 16px; margin-bottom: 16px; overflow: hidden; }
+  .compare tbody tr:last-child { margin-bottom: 0; }
+  .compare tbody th[scope="row"] { width: auto; background: var(--c-band); color: var(--c-green-deep); font-size: 13px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 13px 20px; border-top: none; }
+  .compare td { padding: 13px 20px; border-top: 1px solid var(--c-line); font-size: 15px; }
+  .compare td::before { content: attr(data-col); display: block; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--c-muted); margin-bottom: 3px; }
+  .compare td.gap3 { border-left: none; border-top-color: var(--c-mint-border); }
+  .compare td.gap3::before { color: var(--c-green-link); }
+}
+
+@media (max-width: 768px) {
+  .proof-strip .in { padding-block: 34px; gap: 28px; }
+  .proof-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 0; }
+  .proof-stat { padding: 0 22px; }
+  .proof-stat:nth-child(odd) { border-left: none; padding-left: 0; }
+  .proof-strip .ghost { font-size: 76px; bottom: -20px; }
+  .protect-band { padding: 36px 24px; }
+  .protect-intro .heading { font-size: 34px; }
+  .compare-note, .plans-note { font-size: 16px; }
+  .rev-lockup { width: 100%; }
+}
+@media (max-width: 480px) {
+  .proof-stat .num { font-size: 30px; }
+  .rwork-item, .plan-card { padding: 26px 20px; }
+}
