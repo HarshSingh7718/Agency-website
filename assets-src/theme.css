@@ -1,58 +1,50 @@
-/* ============================================================
-   GAP3 — style.css  (rebuilt to match the reference theme 1:1)
-   Order: tokens → reset → base → layout → components → sections
-   Fonts (Urbanist + Instrument Serif) & Font Awesome load via <link>.
-   All media queries live in responsive.css.
-   ============================================================ */
 
-/* ===================== 1. TOKENS ===================== */
 :root {
   --font-body: 'Urbanist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-accent: 'Instrument Serif', Georgia, 'Times New Roman', serif;
 
-  /* ---- LIMITED PALETTE derived from the GAP3 logo ----
-     Two hues only: LIME GREEN (logo) + NEAR-BLACK GREEN (logo), plus white + one green tint. */
 
-  /* light neutrals */
-  --c-bg: #F6F8F4;            /* paper */
+
+  /* light neutrals — lavender paper */
+  --c-bg: #F8F6FB;            /* paper */
   --c-white: #FFFFFF;
-  --c-band: #E8F3E4;          /* single green tint: sections, cta band, panels */
-  --c-bg-alt: #E8F3E4;        /* = band */
-  --c-ctaband: #E8F3E4;       /* = band */
-  --c-icon-bg: #E3F1DE;       /* icon chips (tint) */
-  --c-mint: #D5EBCF;          /* ribbon strip (one step deeper) */
-  --c-mint-border: #C3E0BC;
-  --c-ctaband-border: #D2E7CC;
-  --c-line: #E3E8DF;          /* hairline */
-  --c-line-2: #E3EFDF;
+  --c-band: #F0E6F8;          /* soft violet tint */
+  --c-bg-alt: #F0E6F8;
+  --c-ctaband: #F0E6F8;
+  --c-icon-bg: #EAD9F5;       /* icon chips */
+  --c-mint: #E0CCF0;          /* ribbon strip */
+  --c-mint-border: #D2B6E8;
+  --c-ctaband-border: #DEC8EC;
+  --c-line: #E6E0EE;          /* hairline */
+  --c-line-2: #EDE6F4;
 
-  /* green (from logo) */
-  --c-green: #1AD00B;         /* brand LIME — dots, marks, focus, fills, on-dark accents (never text on light) */
-  --c-green-deep: #12401C;    /* deep lime-forest — primary buttons, dark cards */
-  --c-green-link: #12771F;    /* darkened lime — links + serif accent on light (AA) */
-  --c-green-on-dark: #46E235; /* lime on dark surfaces */
+  /* purple / magenta (from RapidGroDigital logo) */
+  --c-green: #E91E8C;         /* brand MAGENTA — dots, marks, focus, fills */
+  --c-green-deep: #3D1578;    /* deep purple — primary buttons, dark cards */
+  --c-green-link: #7B1FA2;    /* medium purple — links + serif accent */
+  --c-green-on-dark: #FF4DB8; /* bright magenta on dark surfaces */
 
-  /* ink / text (near-black green from logo) */
-  --c-ink: #0E1A12;           /* headings, dark sections, footer */
-  --c-ink-soft: #1D2A20;
-  --c-body: #39463B;          /* body text */
-  --c-secondary: #465348;
-  --c-muted: #647165;         /* meta / micro labels */
-  --c-dark: #0E1A12;          /* = ink (dark sections) */
+  /* ink / text (near-black purple) */
+  --c-ink: #1A0B2E;           /* headings, dark sections, footer */
+  --c-ink-soft: #2A1640;
+  --c-body: #3D3550;          /* body text */
+  --c-secondary: #4A4260;
+  --c-muted: #6B6480;         /* meta / micro labels */
+  --c-dark: #140820;          /* dark sections */
 
   /* text on dark */
-  --c-on-dark: #F2F6EF;
-  --c-on-dark-2: #C3D1C2;
-  --c-on-dark-3: #D5E2D3;
-  --c-on-dark-muted: #92A492;
-  --c-line-dark: rgba(242, 246, 239, 0.12);
+  --c-on-dark: #F7F2FC;
+  --c-on-dark-2: #D4C6E8;
+  --c-on-dark-3: #E2D6F0;
+  --c-on-dark-muted: #A090B8;
+  --c-line-dark: rgba(247, 242, 252, 0.12);
 
-  /* stars (kept on-palette green, not gold) */
-  --c-star: #12771F;
+  /* stars */
+  --c-star: #7B1FA2;
 
   --container: 1360px;
   --gutter: 40px;
-  --header-h: 90px;
+  --header-h: 96px;
 
   --r-img: 8px;
   --r-card: 16px;
@@ -165,11 +157,11 @@ iconify-icon { display: inline-block; width: 1em; height: 1em; vertical-align: -
 
 /* icon chip */
 .ico { width: 54px; height: 54px; border-radius: 14px; background: var(--c-icon-bg); display: grid; place-items: center; color: var(--c-green-deep); font-size: 24px; flex: none; }
-.ico.on-dark { background: rgba(126, 231, 167, 0.14); color: var(--c-green-on-dark); }
+.ico.on-dark { background: rgba(233, 30, 140, 0.14); color: var(--c-green-on-dark); }
 
 /* ===================== 6. HEADER / NAV ===================== */
 .site-header { position: fixed; inset: 0 0 auto 0; z-index: 50; background: transparent; border-bottom: 1px solid transparent; transition: background var(--dur) ease, border-color var(--dur) ease, box-shadow var(--dur) ease; }
-.site-header.is-scrolled { background: rgba(250, 250, 247, 0.85); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: rgba(226, 226, 220, 0.7); box-shadow: 0 6px 24px rgba(15, 23, 18, 0.05); }
+.site-header.is-scrolled { background: rgba(248, 246, 251, 0.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: rgba(230, 224, 238, 0.8); box-shadow: 0 6px 24px rgba(26, 11, 46, 0.06); }
 .site-header .bar { max-width: var(--container); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 18px var(--gutter); }
 .brand { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; color: var(--c-ink); }
 .brand:hover { color: var(--c-ink); }
@@ -232,8 +224,8 @@ iconify-icon { display: inline-block; width: 1em; height: 1em; vertical-align: -
 .hero-band .hero { padding-top: var(--header-h); }
 /* calm static base — the fallback when the smoke canvas / JS is off */
 .hero::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background: radial-gradient(58% 55% at 66% 32%, rgba(26,208,11,0.15), transparent 70%),
-              radial-gradient(48% 50% at 26% 74%, rgba(70,226,53,0.11), transparent 70%); }
+  background: radial-gradient(58% 55% at 66% 32%, rgba(123,31,162,0.16), transparent 70%),
+              radial-gradient(48% 50% at 26% 74%, rgba(233,30,140,0.12), transparent 70%); }
 /* interactive smoke that trails the cursor (drawn by custom.js) */
 .hero-smoke { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; display: block; pointer-events: none; }
 .hero .inner { position: relative; z-index: 1; width: 100%; max-width: var(--container); margin: 0 auto; padding: 40px var(--gutter); display: flex; flex-direction: column; justify-content: center; gap: 44px; }
@@ -428,7 +420,7 @@ iconify-icon { display: inline-block; width: 1em; height: 1em; vertical-align: -
 .ps-card.dark { background: var(--c-green-deep); }
 .ps-card .ps-ico { width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center; font-size: 22px; }
 .ps-card.muted .ps-ico { background: #FBE9E6; color: #D9432E; }
-.ps-card.dark .ps-ico { background: rgba(126,231,167,0.16); color: var(--c-green-on-dark); }
+.ps-card.dark .ps-ico { background: rgba(233,30,140,0.16); color: var(--c-green-on-dark); }
 .ps-card .ps-t { font-size: 24px; font-weight: 700; }
 .ps-card.muted .ps-t { color: var(--c-ink); }
 .ps-card.dark .ps-t { color: var(--c-on-dark); }
@@ -457,7 +449,7 @@ iconify-icon { display: inline-block; width: 1em; height: 1em; vertical-align: -
 .why-dark .container { padding-block: 96px; display: flex; flex-direction: column; gap: 48px; }
 .intro-block { display: flex; flex-direction: column; gap: 18px; }
 .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.why-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(126,231,167,0.18); border-radius: var(--r-card); padding: 32px 30px; display: flex; flex-direction: column; gap: 16px; }
+.why-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(233,30,140,0.18); border-radius: var(--r-card); padding: 32px 30px; display: flex; flex-direction: column; gap: 16px; }
 .why-card .why-ico { width: 52px; height: 52px; border-radius: 14px; background: rgba(126,231,167,0.14); color: var(--c-green-on-dark); display: grid; place-items: center; font-size: 21px; }
 .why-card .why-t { font-size: 21px; font-weight: 600; color: var(--c-on-dark); }
 .why-card .why-d { font-size: 17px; line-height: 1.6; color: var(--c-on-dark-2); }
@@ -616,7 +608,7 @@ iconify-icon { display: inline-block; width: 1em; height: 1em; vertical-align: -
 .footer-col a { font-size: 18px; color: var(--c-on-dark-3); }
 .footer-col a:hover { color: var(--c-green-on-dark); }
 .footer-prod { display: flex; align-items: flex-start; gap: 11px; }
-.footer-prod .p-ico { width: 36px; height: 36px; min-width: 36px; border-radius: 9px; background: rgba(126,231,167,0.12); display: grid; place-items: center; color: var(--c-green-on-dark); font-size: 16px; }
+.footer-prod .p-ico { width: 36px; height: 36px; min-width: 36px; border-radius: 9px; background: rgba(233,30,140,0.12); display: grid; place-items: center; color: var(--c-green-on-dark); font-size: 16px; }
 .footer-prod .p-t { display: block; font-size: 18px; font-weight: 600; color: var(--c-on-dark); }
 .footer-prod .p-d { display: block; font-size: 13px; line-height: 1.35; color: var(--c-on-dark-muted); margin-top: 4px; }
 .footer-contact { display: inline-flex; align-items: flex-start; gap: 12px; font-size: 18px; line-height: 1.5; color: var(--c-on-dark-3); }
@@ -699,7 +691,7 @@ iconify-icon { display: inline-block; width: 1em; height: 1em; vertical-align: -
 .wpm-item { display: flex; align-items: center; gap: 12px; width: 100%; padding: 11px 20px; font-size: 14px; font-weight: 500; color: var(--c-on-dark-2); text-align: left; border-left: 3px solid transparent; transition: background .2s ease, color .2s ease, border-color .2s ease; }
 .wpm-item iconify-icon { font-size: 18px; opacity: .82; flex: none; }
 .wpm-item:hover { background: rgba(255, 255, 255, .05); color: var(--c-on-dark); }
-.wpm-item.is-active { background: rgba(70, 226, 53, .1); color: #fff; border-left-color: var(--c-green); }
+.wpm-item.is-active { background: rgba(233, 30, 140, .12); color: #fff; border-left-color: var(--c-green); }
 .wpm-item.is-active iconify-icon { color: var(--c-green-on-dark); opacity: 1; }
 
 /* main column */
@@ -823,7 +815,7 @@ iconify-icon { display: inline-block; width: 1em; height: 1em; vertical-align: -
 .saas-logo { width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, var(--c-green), var(--c-green-deep)); display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 15px; margin-bottom: 8px; flex: none; }
 .saas-railio { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; color: var(--c-on-dark-2); font-size: 19px; flex: none; }
 .saas-railio:hover { background: rgba(255, 255, 255, .06); color: #fff; }
-.saas-railio.cur { background: rgba(70, 226, 53, .12); color: var(--c-green-on-dark); }
+.saas-railio.cur { background: rgba(233, 30, 140, .14); color: var(--c-green-on-dark); }
 .saas-railsp { flex: 1; }
 .saas-me { width: 34px; height: 34px; border-radius: 50%; background: var(--c-green-deep); display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 13px; flex: none; }
 
@@ -947,8 +939,9 @@ iconify-icon { display: inline-block; width: 1em; height: 1em; vertical-align: -
 .brand,
 .mobile-nav .m-brand,
 .footer-brand { display: inline-flex; align-items: center; }
-.brand-logo { display: block; width: auto; max-width: 220px; }
-.footer-brand .brand-logo { max-width: 180px; }
+.brand-logo { display: block; width: auto; height: 52px; max-width: 200px; object-fit: contain; }
+.footer-brand .brand-logo { height: 64px; max-width: 240px; }
+.m-brand .brand-logo { height: 56px; max-width: 220px; }
 
 /* ---- Blog pagination ---- */
 .pagination { margin-top: 64px; }
@@ -1207,7 +1200,7 @@ iconify-icon { display: inline-block; width: 1em; height: 1em; vertical-align: -
 .mkc-rankbadge { position: absolute; top: 10px; right: 12px; font-size: 11px; font-weight: 700; color: var(--c-green-deep); background: #fff; border: 1px solid var(--c-mint-border); border-radius: 999px; padding: 2px 9px; }
 .mkc-code { background: #0F1115; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 8px; }
 .mkc-codeline { height: 9px; border-radius: 5px; background: #26313A; display: block; }
-.mkc-codeline.c1 { background: rgba(70, 226, 53, .55); }
+.mkc-codeline.c1 { background: rgba(233, 30, 140, .55); }
 .mkc-codeline.c2 { background: rgba(127, 180, 224, .55); }
 .mkc-codeline.c3 { background: rgba(201, 169, 106, .6); }
 .mkc-codeline.ind { margin-left: 18px; }

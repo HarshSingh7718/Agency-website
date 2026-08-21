@@ -38,8 +38,8 @@
       "  float d = fbm(p*2.1 + 2.3*r + flow*1.4);",
       "  float dens = smoothstep(0.12, 0.78, d) + exp(-dm*3.0)*u_mstr*0.20;",
       "  dens = clamp(dens, 0.0, 1.0);",
-      "  vec3 lime = vec3(0.102,0.816,0.043);",   
-      "  vec3 mid  = vec3(0.275,0.886,0.208);",   
+      "  vec3 lime = vec3(0.913,0.118,0.549);",   
+      "  vec3 mid  = vec3(0.482,0.122,0.635);",   
       "  vec3 col = mix(mid, lime, smoothstep(0.4,1.0,d));",
       "  gl_FragColor = vec4(col, dens * 0.55);",
       "}"
