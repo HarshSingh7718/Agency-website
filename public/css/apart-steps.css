@@ -1,0 +1,209 @@
+.rg-apart {
+  background: var(--c-bg);
+  padding: clamp(72px, 10vw, 110px) 0;
+}
+
+.rg-apart .container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px, 5vw, 52px);
+}
+
+/* Top bar: label + step count */
+.rg-apart__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.rg-apart__label {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-green);
+}
+
+.rg-apart__count {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--c-line);
+}
+
+.rg-apart__count span:last-child {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--c-muted);
+  align-self: flex-end;
+  padding-bottom: 6px;
+}
+
+/* Split headline */
+.rg-apart__title {
+  font-size: clamp(2rem, 4.8vw, 3.4rem);
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--c-ink);
+  max-width: 18ch;
+}
+
+.rg-apart__title .accent {
+  display: block;
+  margin-top: 4px;
+  background: linear-gradient(135deg, var(--c-green-deep) 0%, var(--c-green-link) 45%, var(--c-green) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Timeline track */
+.rg-apart__track {
+  position: relative;
+  padding: 0 8px;
+}
+
+.rg-apart__line {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  top: 50%;
+  height: 1px;
+  background: var(--c-line);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.rg-apart__dots {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.rg-apart__dot {
+  justify-self: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--c-line);
+  background: var(--c-white);
+  color: var(--c-ink);
+  font-size: 18px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.35s var(--ease), border-color 0.35s var(--ease), color 0.35s var(--ease), transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.rg-apart__dot:hover {
+  border-color: var(--c-green-link);
+  transform: scale(1.06);
+}
+
+.rg-apart__dot.is-active {
+  background: var(--c-green-deep);
+  border-color: var(--c-green-deep);
+  color: #fff;
+  box-shadow: 0 10px 28px rgba(61, 21, 120, 0.35);
+}
+
+/* Four columns */
+.rg-apart__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(20px, 3vw, 32px);
+}
+
+.rg-apart__step {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 8px 4px;
+  cursor: pointer;
+  transition: opacity 0.35s var(--ease);
+}
+
+.rg-apart__step:not(.is-active) {
+  opacity: 0.55;
+}
+
+.rg-apart__step:hover,
+.rg-apart__step.is-active {
+  opacity: 1;
+}
+
+.rg-apart__step h3 {
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--c-ink);
+  line-height: 1.3;
+}
+
+.rg-apart__step h3 em {
+  font-style: normal;
+  color: var(--c-green-link);
+}
+
+.rg-apart__step p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--c-secondary);
+}
+
+/* Tablet: 2x2 grid */
+@media (max-width: 1024px) {
+  .rg-apart__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 24px;
+  }
+  .rg-apart__dots {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile: stack */
+@media (max-width: 640px) {
+  .rg-apart__top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .rg-apart__title {
+    max-width: none;
+  }
+  .rg-apart__track {
+    display: none;
+  }
+  .rg-apart__grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .rg-apart__step {
+    opacity: 1;
+    padding: 24px 0;
+    border-top: 1px solid var(--c-line);
+  }
+  .rg-apart__step:last-child {
+    border-bottom: 1px solid var(--c-line);
+  }
+  .rg-apart__step:not(.is-active) {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rg-apart__dot,
+  .rg-apart__step {
+    transition: none;
+  }
+}
