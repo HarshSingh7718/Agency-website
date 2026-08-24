@@ -125,19 +125,20 @@
       });
     }
 
-    doc.querySelectorAll(".faq .item").forEach(function (item) {
-      var q = item.querySelector(".q"), a = item.querySelector(".a");
-      if (!q || !a) return;
-      q.setAttribute("aria-expanded", item.classList.contains("is-open") ? "true" : "false");
+    doc.querySelectorAll(".faq .item, .faq-item").forEach(function (item) {
+      var trigger = item.querySelector(".faq-item__header, .q") || item;
+      var a = item.querySelector(".faq-item__body, .a");
+      if (!trigger || !a) return;
+      trigger.setAttribute("aria-expanded", item.classList.contains("is-open") ? "true" : "false");
       if (item.classList.contains("is-open")) a.style.maxHeight = a.scrollHeight + "px";
-      q.addEventListener("click", function () {
+      trigger.addEventListener("click", function () {
         var open = item.classList.toggle("is-open");
-        q.setAttribute("aria-expanded", open ? "true" : "false");
+        trigger.setAttribute("aria-expanded", open ? "true" : "false");
         a.style.maxHeight = open ? a.scrollHeight + "px" : "";
       });
     });
     window.addEventListener("resize", function () {
-      doc.querySelectorAll(".faq .item.is-open .a").forEach(function (a) { a.style.maxHeight = a.scrollHeight + "px"; });
+      doc.querySelectorAll(".faq .item.is-open .a, .faq-item.is-open .faq-item__body").forEach(function (a) { a.style.maxHeight = a.scrollHeight + "px"; });
     });
 
     doc.querySelectorAll("[data-chipgroup]").forEach(function (group) {

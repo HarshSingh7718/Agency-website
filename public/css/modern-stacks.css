@@ -1,0 +1,207 @@
+.tools {
+  background: var(--c-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.tools .container {
+  padding-block: 96px 104px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.tools .eyebrow {
+  margin-bottom: 4px;
+}
+
+.tools .heading {
+  font-family: var(--font-body);
+  font-size: 52px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--c-ink);
+  max-width: 800px;
+}
+
+.tools .heading .serif {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--c-green-link);
+}
+
+.tools .sub {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--c-secondary);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* Staggered Stack Cloud Container */
+.stack-cloud {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 1140px;
+  margin-top: 36px;
+  align-items: center;
+}
+
+/* Row of Pill Badges */
+.stack-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 14px 16px;
+  width: 100%;
+}
+
+/* Individual Pill Badge */
+.stack-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--c-bg);
+  border: 1px solid var(--c-line-2);
+  border-radius: 14px;
+  padding: 13px 24px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.25s ease, border-color 0.25s ease,
+    box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 2px 8px rgba(26, 11, 46, 0.03);
+}
+
+.stack-badge__icon {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stack-badge__icon iconify-icon,
+.stack-badge__icon svg {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.stack-badge__name {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--c-ink);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  transition: color 0.25s ease;
+}
+
+/* Interactive Hover State (highlighting like in reference images) */
+.stack-badge:hover {
+  background: #ead9f5;
+  border-color: var(--c-green-link);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(61, 21, 120, 0.12),
+    0 4px 10px rgba(233, 30, 140, 0.08);
+}
+
+.stack-badge:hover .stack-badge__name {
+  color: var(--c-green-deep);
+  font-weight: 700;
+}
+
+.stack-badge:hover .stack-badge__icon {
+  transform: scale(1.18);
+}
+
+/* Optional Highlighted Item Style (like Kotlin / Django in ref images) */
+.stack-badge.is-highlighted {
+  background: #ead9f5;
+  border-color: var(--c-green-link);
+  box-shadow: 0 6px 18px rgba(61, 21, 120, 0.1);
+}
+
+.stack-badge.is-highlighted .stack-badge__name {
+  color: var(--c-green-deep);
+  font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .tools .heading {
+    font-size: 44px;
+  }
+  .stack-cloud {
+    gap: 14px;
+    margin-top: 30px;
+  }
+  .stack-row {
+    gap: 12px 14px;
+  }
+  .stack-badge {
+    padding: 12px 20px;
+    border-radius: 12px;
+  }
+  .stack-badge__name {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tools .container {
+    padding-block: 72px;
+  }
+  .tools .heading {
+    font-size: 34px;
+  }
+  .tools .sub {
+    font-size: 16px;
+  }
+  .stack-cloud {
+    gap: 12px;
+  }
+  .stack-row {
+    gap: 10px;
+  }
+  .stack-badge {
+    padding: 10px 16px;
+    gap: 10px;
+  }
+  .stack-badge__icon {
+    width: 22px;
+    height: 22px;
+  }
+  .stack-badge__icon iconify-icon,
+  .stack-badge__icon svg {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+  .stack-badge__name {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tools .heading {
+    font-size: 28px;
+  }
+  .stack-badge {
+    padding: 8px 14px;
+    border-radius: 10px;
+  }
+}
